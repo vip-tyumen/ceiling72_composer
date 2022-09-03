@@ -1,0 +1,24 @@
+{
+	"name": "projectsoft/ceiling72",
+	"description": "Composer для сайта ПОТОЛОК72.РФ",
+	"keywords": [],
+	"homepage": "https://github.com/vip-tyumen/ceiling72_composer",
+	"type": "library",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "ProjectSoft",
+			"homepage": "https://github.com/ProjectSoft-STUDIONIONS"
+		}
+	],
+	"require": {
+		"php": ">=7.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"ProjectSoft\\": "/src"
+		}
+	}
+}
