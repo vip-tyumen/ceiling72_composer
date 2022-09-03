@@ -5,7 +5,7 @@ class PrepareDLMenu {
 
 	public static function prepareHome(array $data, \DocumentParser $modx, $_DL, \prepare_DL_Extender $_extDocLister)
 	{
-		$sheme = $_DocLister->getCFGDef('urlScheme');
+		$sheme = $_DL->getCFGDef('urlScheme');
 		$site = $modx->config['site_name'];
 		$ignored = $modx->config['ignore_menu_ids'] || '';
 		$ignored = explode(',', $ignored);
