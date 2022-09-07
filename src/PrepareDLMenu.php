@@ -15,6 +15,9 @@ class PrepareDLMenu {
 		if(in_array((int)$data['id'], $ignored, true)):
 			$data['url'] = $modx->makeUrl($modx->config['site_start'], '', '', $sheme) . "#" . $data["alias"];
 		endif;
+		if($data['alias'] == 'contacts'):
+			$data['url'] = $modx->makeUrl($modx->documentIdentifier, '', '', $sheme) . "#" . $data["alias"];
+		endif;
 		return $data;
 	}
 }
