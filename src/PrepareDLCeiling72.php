@@ -23,6 +23,20 @@ class PrepareDLCeiling72 {
 		return $data;
 	}
 
+	public static function prepareWork(array $data, \DocumentParser $modx, $_DL, \prepare_DL_Extender $_extDocLister)
+	{
+		$result = $modx->runSnippet('GalleryAttr', array(
+			'id' => $data["id"]
+		));
+		$data["json"] = $result ? $result : "[]";
+		$image = $modx->runSnippet("phpthumb", array(
+			'input' => $data['imageSoc'],
+			'options' => 'w=270,h=202,zc=C'
+		));
+		$data["image"] = $image;
+		return $data;
+	}
+
 	public static function prepareMultiTV_Gallery ($data, $modx, $_multiTV)
 	{
 		$site = $modx->config['site_url'];
