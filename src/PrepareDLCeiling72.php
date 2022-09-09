@@ -22,4 +22,23 @@ class PrepareDLCeiling72 {
 		endif;
 		return $data;
 	}
+
+	public static function prepareMultiTV_Gallery ($data, $modx, $_multiTV)
+	{
+		$site = $modx->config['site_url'];
+		$caption = (string)$data['title'];
+		$src = (string)$data['image'];
+		$thumb = $modx->runSnippet('phpthumb', array(
+			'input' => (string)$data['image'],
+			'options' => 'w=96,h=75,zc=C'
+		));
+		$output = array(
+			'src' => $site . $src,
+			'opts' => array(
+				'caption' => $caption,
+				'thumb' => $site . $thumb
+			)
+		);
+		return $output;
+	}
 }
